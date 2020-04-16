@@ -6,11 +6,21 @@ import Board from './board';
 
 class App extends Component {
 
+  state = {
+    score: 0
+  }
+
+  increaseScore = () => {
+    this.setState({
+      score: this.state.score + 1
+    })
+  }
+
   render() {
     return (
-      <div className="App">
-          <Header />
-          <Board />
+      <div>
+          <Header score={this.state.score} />
+          <Board increase={this.increaseScore} />
       </div>
     );
   }
