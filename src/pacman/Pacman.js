@@ -35,6 +35,7 @@ class Pacman extends Component {
     const currentLeft = this.state.position.left;
 
     // TODO: move pacman
+    
   }
 
   render() {

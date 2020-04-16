@@ -13,7 +13,10 @@ class Board extends Component {
     this.pacmanRef = React.createRef();
 
     this.foods = [];
-    this.amountOfFood = ((window.innerWidth - this.props.border - this.props.foodSize ) * (window.innerHeight - this.props.border - this.props.topScoreBoard)) / (this.props.foodSize * this.props.foodSize);
+    this.amountOfFood = (
+      (window.innerWidth - this.props.border - this.props.foodSize)
+        * (window.innerHeight - this.props.border - this.props.topScoreBoard)
+    ) / (this.props.foodSize * this.props.foodSize);
     for (let i = 0; i < this.amountOfFood; i++) {
       this['food' + i] = React.createRef();
     }
@@ -21,15 +24,16 @@ class Board extends Component {
 
   componentDidMount() {
     // TODO: uncomment me when necessary
-    // this.intervalFood = setInterval(this.lookForEat, 100);
+    this.intervalFood = setInterval(this.lookForEat, 100);
   }
 
   lookForEat = () => {
     const pacmanX = this.pacmanRef.current.state.position.left;
-    const pacmanY = this.pacmanRef.current.state.position.top;
+  const pacmanY = this.pacmanRef.current.state.position.top;
+  const pacmanSize = this.pacmanRef.current.props.size
 
-    const pacmanLastX = this.pacmanRef.current.state.position.left + this.pacmanRef.current.props.size / 2;
-		const pacmanLastY = this.pacmanRef.current.state.position.top + this.pacmanRef.current.props.size / 2;
+  const pacmanLastX = pacmanX + pacmanSize / 2;
+  const pacmanLastY = pacmanY + pacmanSize / 2;
 
     // TODO: implement food eating
   }
