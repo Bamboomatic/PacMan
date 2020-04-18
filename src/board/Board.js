@@ -15,7 +15,7 @@ class Board extends Component {
     this.foods = [];
     this.amountOfFood = (
       (window.innerWidth - this.props.border - this.props.foodSize)
-        * (window.innerHeight - this.props.border - this.props.topScoreBoard)
+      * (window.innerHeight - this.props.border - this.props.topScoreBoard)
     ) / (this.props.foodSize * this.props.foodSize);
     for (let i = 0; i < this.amountOfFood; i++) {
       this['food' + i] = React.createRef();
@@ -29,18 +29,18 @@ class Board extends Component {
 
   lookForEat = () => {
     const pacmanX = this.pacmanRef.current.state.position.left;
-  const pacmanY = this.pacmanRef.current.state.position.top;
-  const pacmanSize = this.pacmanRef.current.props.size
+    const pacmanY = this.pacmanRef.current.state.position.top;
+    const pacmanSize = this.pacmanRef.current.props.size
 
-  const pacmanLastX = pacmanX + pacmanSize / 2;
-  const pacmanLastY = pacmanY + pacmanSize / 2;
+    const pacmanLastX = pacmanX + pacmanSize / 2;
+    const pacmanLastY = pacmanY + pacmanSize / 2;
 
     // TODO: implement food eating
   }
 
   render() {
     let foods = [];
-		let currentTop = 0;
+    let currentTop = 0;
     let currentLeft = 0;
 
 
@@ -48,18 +48,18 @@ class Board extends Component {
 
     return (
       <div className="board">
-          {foods}
-          <Pacman ref={this.pacmanRef} />
-          <Ghost color="blue"/>
+        {foods}
+        <Pacman ref={this.pacmanRef} />
+        <Ghost color="blue" />
       </div>
     )
   }
 }
 
 Board.defaultProps = {
-	foodSize: 50,
-	border: 20,
-	topScoreBoard: 100
+  foodSize: 50,
+  border: 20,
+  topScoreBoard: 100
 };
 
 export default Board;

@@ -10,32 +10,32 @@
 // up:
 {
   top: Math.max(currentTop - this.props.step, 0),
-  left: currentLeft
+    left: currentLeft
 }
 
 // right:
 {
   top: currentTop,
-  left: Math.min(currentLeft + this.props.step, window.innerWidth - this.props.border - this.props.size)
+    left: Math.min(currentLeft + this.props.step, window.innerWidth - this.props.border - this.props.size)
 }
 
 // down
 {
   top: Math.min(currentTop + this.props.step, window.innerHeight - this.props.size - this.props.border - this.props.topScoreBoard),
-  left: currentLeft
+    left: currentLeft
 }
 
 // left:
 {
   top: currentTop,
-  left: Math.max(currentLeft - this.props.step, 0)
+    left: Math.max(currentLeft - this.props.step, 0)
 }
 
 
 // Amount of food (Board.js):
 this.amountOfFood = (
   (window.innerWidth - this.props.border - this.props.foodSize)
-    * (window.innerHeight - this.props.border - this.props.topScoreBoard)
+  * (window.innerHeight - this.props.border - this.props.topScoreBoard)
 ) / (this.props.foodSize * this.props.foodSize);
 
 

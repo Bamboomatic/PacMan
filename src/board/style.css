@@ -1,7 +1,7 @@
 .board {
   height: calc(100vh - 120px);
   width: calc(100vw - 20px);
-  background-color: blue;
+  background-color: rgba(22, 22, 219, 0.651);
   position: relative;
   border: 10px red solid;
 }
